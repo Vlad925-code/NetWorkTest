@@ -8,10 +8,10 @@ import retrofit2.http.POST
 
 interface ApiService {
     @GET("posts")
-    fun getPosts(): Response<List<Post>>
+    suspend fun getPosts(): Response<List<Post>>
 
     @POST("posts")
-    fun createPost(@Body post:Post): Response<Post>
+    suspend fun createPost(@Body post:Post): Response<Post>
 }
 
 data class Post(
